@@ -1,3 +1,79 @@
-import os
-OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
-client = openai.OpenAI(api_key=OPENAI_API_KEY) 
+{
+  "regions": [
+    {"ua": "Харківська область", "en": "Kharkiv region", "cases": 20777},
+    {"ua": "Запорізька область", "en": "Zaporizhzhia region", "cases": 13714},
+    {"ua": "Донецька область", "en": "Donetsk region", "cases": 11991},
+    {"ua": "Херсонська область", "en": "Kherson region", "cases": 9063},
+    {"ua": "Сумська область", "en": "Sumy region", "cases": 5939},
+    {"ua": "Київська область", "en": "Kyiv region", "cases": 5366},
+    {"ua": "Чернігівська область", "en": "Chernihiv region", "cases": 5288},
+    {"ua": "Дніпропетровська область", "en": "Dnipropetrovsk region", "cases": 4217},
+    {"ua": "Миколаївська область", "en": "Mykolaiv region", "cases": 4141},
+    {"ua": "Луганська область", "en": "Luhansk region", "cases": 3944},
+    {"ua": "Житомирська область", "en": "Zhytomyr region", "cases": 1866},
+    {"ua": "Одеська область", "en": "Odesa region", "cases": 1453},
+    {"ua": "Черкаська область", "en": "Cherkasy region", "cases": 492},
+    {"ua": "Рівненська область", "en": "Rivne region", "cases": 206},
+    {"ua": "Хмельницька область", "en": "Khmelnytskyi region", "cases": 143},
+    {"ua": "Кіровоградська область", "en": "Kirovohrad region", "cases": 133},
+    {"ua": "Львівська область", "en": "Lviv region", "cases": 101},
+    {"ua": "Полтавська область", "en": "Poltava region", "cases": 79},
+    {"ua": "Вінницька область", "en": "Vinnytsia region", "cases": 43},
+    {"ua": "Івано-Франківська область", "en": "Ivano-Frankivsk region", "cases": 36},
+    {"ua": "Тернопільська область", "en": "Ternopil region", "cases": 13},
+    {"ua": "Волинська область", "en": "Volyn region", "cases": 9},
+    {"ua": "Чернівецька область", "en": "Chernivtsi region", "cases": 6},
+    {"ua": "Закарпатська область", "en": "Zakarpattia region", "cases": 1}
+  ],
+  "categories": {
+    "losses": [
+      {"ua": "Загибель людини", "en": "Human death", "cases": 8093, "victims": 13053},
+      {"ua": "Поранення чи інша шкода для здоров’я", "en": "Injury or other health damage", "cases": 9786, "victims": 23346},
+      {"ua": "Сексуальне насильство", "en": "Sexual violence", "cases": 45, "victims": 49},
+      {"ua": "Порушення прав", "en": "Rights violations", "cases": 1940, "victims": 7171},
+      {"ua": "Зникнення людини", "en": "Disappearance", "cases": 3414, "victims": 4504}
+    ],
+    "objects": [
+      {"ua": "Магазини, заводи та інші об’єкти бізнесу", "en": "Shops, factories, and other business objects", "cases": 5792},
+      {"ua": "Громадські організації", "en": "Public organizations", "cases": 90},
+      {"ua": "Освітні заклади", "en": "Educational institutions", "cases": 2693},
+      {"ua": "Урядові будівлі", "en": "Government buildings", "cases": 1069},
+      {"ua": "Житлові будинки", "en": "Residential buildings", "cases": 42704},
+      {"ua": "Транспортна інфраструктура", "en": "Transport infrastructure", "cases": 705},
+      {"ua": "Фермерські угіддя, ліси тощо", "en": "Farms, forests, etc.", "cases": 1124},
+      {"ua": "Лікарні", "en": "Hospitals", "cases": 883},
+      {"ua": "Розважальні заклади", "en": "Entertainment venues", "cases": 597},
+      {"ua": "Храми", "en": "Temples", "cases": 416},
+      {"ua": "Об’єкт інфраструктури життєзабезпечення", "en": "Life-support infrastructure object", "cases": 2953},
+      {"ua": "Історичні пам’ятки", "en": "Historical monuments", "cases": 194},
+      {"ua": "Мости", "en": "Bridges", "cases": 102},
+      {"ua": "Транспортні засоби", "en": "Vehicles", "cases": 5374},
+      {"ua": "Гуманітарний конвой", "en": "Humanitarian convoy", "cases": 16},
+      {"ua": "Гуманітарний коридор", "en": "Humanitarian corridor", "cases": 13}
+    ],
+    "events": [
+      {"ua": "Артобстріл/бомбардування", "en": "Artillery shelling/bombing", "cases": 75247},
+      {"ua": "Обстріл зі стрілецької зброї", "en": "Small arms fire", "cases": 1189},
+      {"ua": "Детонація вибухівки", "en": "Explosion detonation", "cases": 1519},
+      {"ua": "Ушкодження транспортним засобом", "en": "Vehicle damage", "cases": 135},
+      {"ua": "Катування, нелюдське поводження, посягання на людську гідність", "en": "Torture, inhuman treatment, violation of human dignity", "cases": 712},
+      {"ua": "Зникнення", "en": "Disappearance", "cases": 2762},
+      {"ua": "Незаконне позбавлення волі", "en": "Unlawful deprivation of liberty", "cases": 1175},
+      {"ua": "Захоплення цивільної будівлі", "en": "Seizure of a civilian building", "cases": 742},
+      {"ua": "Використання цивільного населення як живого щита", "en": "Use of civilians as human shields", "cases": 374},
+      {"ua": "Привласнення майна цивільних осіб", "en": "Appropriation of civilian property", "cases": 2404},
+      {"ua": "Умисне вбивство цивільної людини", "en": "Intentional killing of a civilian", "cases": 875},
+      {"ua": "Умисне тілесне ушкодження цивільної людини", "en": "Intentional bodily harm to a civilian", "cases": 344},
+      {"ua": "Масове насильницьке вивезення людей до Росії", "en": "Mass forced deportation to Russia", "cases": 64},
+      {"ua": "Напад на склад гуманітарної допомоги, гуманітарний конвой, гуманітарну місію чи коридор", "en": "Attack on humanitarian aid warehouse, convoy, mission, or corridor", "cases": 45},
+      {"ua": "Екологічна катастрофа внаслідок обстрілу", "en": "Ecological disaster due to shelling", "cases": 121},
+      {"ua": "Сексуальне насильство", "en": "Sexual violence", "cases": 55},
+      {"ua": "Взяття заручників", "en": "Taking hostages", "cases": 18},
+      {"ua": "Застосування хімічної зброї", "en": "Use of chemical weapons", "cases": 3},
+      {"ua": "Примусова мобілізація", "en": "Forced mobilization", "cases": 65}
+    ]
+  },
+  "totals": {
+    "ua": "Всього кейсів", "en": "Total cases", "cases": 89021
+  }
+} 
